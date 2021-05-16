@@ -64,6 +64,7 @@ public class LoginController {
                 sessionMap.put(customer.getTelephone(), sessionId);
                 session.setAttribute(customer.getTelephone(), customer);
                 session.setAttribute("user", customer.getTelephone());
+//                session.setAttribute("user", customer.getId());
                 session.setAttribute("password", customer.getPassword());
                 message.setMsgCode(message.getCUSTOMER());
                 message.setMsg("客户");
