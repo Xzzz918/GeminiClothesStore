@@ -1,6 +1,7 @@
 package com.xiaogemini.service;
 
 import com.xiaogemini.pojo.Admin;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -10,4 +11,6 @@ import java.util.List;
  */
 public interface AdminService {
     List<Admin> queryAll();
+    Admin selectAdmin(Admin admin);
+    void updatePwd(@Param("password") String password);
 }

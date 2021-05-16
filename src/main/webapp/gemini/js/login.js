@@ -1,21 +1,21 @@
 /**
  * 登录脚本
- * PengHao
+ * GEMINI
  */
 layui.use(['layer', 'form', 'jquery'], function () {
     // 获取加载模块对象
-    var layer = layui.layer;
-    var $ = layui.jquery;
-    var form = layui.form;
+    const layer = layui.layer;
+    const $ = layui.jquery;
+    const form = layui.form;
 
     // 表单验证
     form.verify({
         // 验证手机号
-        lease_telephone_input_verify: function (value, item) {
-            if (value != 'admin') {
+        gemini_telephone_input_verify: function (value, item) {
+            if (value !== 'admin') {
                 if (!new RegExp('^[0-9]{11}$').test(value)) {
                     // 清空手机号输入框
-                    form.val('lease-login-form-filter', {
+                    form.val('gemini-login-form-filter', {
                         'telephone': ''
                     });
                     return '手机号不合法！';
@@ -23,16 +23,16 @@ layui.use(['layer', 'form', 'jquery'], function () {
             }
         }
         // 验证密码
-        , lease_password_input_verify: function (value, item) {
+        , gemini_password_input_verify: function (value, item) {
             if (!new RegExp('^[a-zA-Z0-9\\s·]+$').test(value)) {
                 return '密码只能是字母或数字';
             }
-            if (value.length > 12) {
+            if (value.length < 6) {
                 // 清空密码输入框
-                form.val('lease-login-form-filter', {
+                form.val('gemini-login-form-filter', {
                     'password': ''
                 });
-                return '密码不能超过12位';
+                return '密码不低于六位';
             }
         }
     });
@@ -40,18 +40,18 @@ layui.use(['layer', 'form', 'jquery'], function () {
     // 登录
     form.on('submit(LAY-user-login-submit)', function (data) {
         let loading; // 加载中
-        let formVal = form.val('lease-login-form-filter');
+        let formVal = form.val('gemini-login-form-filter');
         let ajaxData = {
             telephone: formVal.telephone
             , password: formVal.password
         };
         $.ajax({
-            url: '/login/check.do'
+            url: '/login/checkin'
             , type: 'post'
             , dataType: 'json'
             , data: ajaxData
             , beforeSend: function () {
-                $('#lease-login-btn-id').text('loginning');
+                $('#gemini-login-btn-id').text('loginning');
                 loading = layer.load(2); // 显示加载中
             },
             success: function (message) {
@@ -59,7 +59,7 @@ layui.use(['layer', 'form', 'jquery'], function () {
                 if (msgCode === message.admin) {
                     location.href = '/admin/index'; // 跳转到管理员主页
                 } else if (msgCode === message.customer) {
-                    location.href = '/customer/index.htm'; // 跳转到客户主页
+                    location.href = '/customer/index'; // 跳转到客户主页
                 } else if (msgCode === message.error) {
                     // 清空输入框
                     form.val('lease-login-form-filter', {
@@ -78,26 +78,12 @@ layui.use(['layer', 'form', 'jquery'], function () {
                 layer.msg('system busy', {icon: 5});
             },
             complete: function () {
-                // console.log('登录完成');
-                $('#lease-login-btn-id').text('登 录');
-                // 关闭加载中弹出层
+                $('#gemini-login-btn-id').text('登 录');
                 layer.close(loading);
             }
         });
         return false;
     });
-
-    // 忘记密码，鼠标滑过事件
-    $('#id-forget-password').hover(
-        function () {
-            layer.tips('connect the administer BY 130 2120 2155', this, {
-                tips: [1, '#3595CC'],
-                time: 2000
-            });
-        }
-        , function () {
-        }
-    );
 
     // 注册账号，鼠标滑过事件
     $('#a-id-register').hover(

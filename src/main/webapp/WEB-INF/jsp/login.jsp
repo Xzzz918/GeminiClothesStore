@@ -31,13 +31,13 @@
             <p>Login To View My World</p>
         </div>
         <!--登录表单-->
-        <form class="layadmin-user-login-box layadmin-user-login-body layui-form" lay-filter="lease-login-form-filter">
+        <form class="layadmin-user-login-box layadmin-user-login-body layui-form" lay-filter="gemini-login-form-filter">
             <!--手机号-->
             <div class="layui-form-item">
                 <label class="layadmin-user-login-icon layui-icon layui-icon-username"
                        for="LAY-user-login-telephone"></label>
                 <input type="text" name="telephone" id="LAY-user-login-telephone"
-                       lay-verify="required|lease_telephone_input_verify"
+                       lay-verify="required|gemini_telephone_input_verify"
                        placeholder="telephone" class="layui-input">
             </div>
             <!--密码-->
@@ -46,25 +46,19 @@
                        for="LAY-user-login-password"></label>
                 <!--密码输入框-->
                 <input type="password" name="password" id="LAY-user-login-password"
-                       lay-verify="required|lease_password_input_verify"
+                       lay-verify="required|gemini_password_input_verify"
                        placeholder="password" class="layui-input">
-            </div>
-            <!--忘记密码-->
-            <div class="layui-form-item" style="margin-bottom: 20px;">
-                <input type="checkbox" name="remember" lay-skin="primary" title="remember" disabled="disabled">
-                <a id="id-forget-password" class="layadmin-user-jump-change layadmin-link"
-                   style="margin-top: 7px;">forget your password?</a>
             </div>
             <!--登录按钮-->
             <div class="layui-form-item">
-                <button id="lease-login-btn-id" class="layui-btn layui-btn-fluid" lay-submit
+                <button id="gemini-login-btn-id" class="layui-btn layui-btn-fluid" lay-submit
                         lay-filter="LAY-user-login-submit">
                     Login In
                 </button>
             </div>
             <!--注册-->
             <div class="layadmin-user-login-other">
-                <a id="a-id-register" class="layadmin-user-jump-change layadmin-link">Login Up</a>
+                <a id="a-id-register" class="layadmin-user-jump-change layadmin-link">Sign Up</a>
             </div>
         </form>
     </div>
@@ -73,17 +67,17 @@
     <div class="layui-trans layadmin-user-login-footer">
         <p>© 2021 <a href="" target="_blank">GEMINI's Clothes Store</a></p>
         <p>
-            <span><a href="https://github.com/wowpH/Lease" target="_blank">GitHub</a></span>
-            <span><a href="https://blog.csdn.net/pfdvnah" target="_blank">CSDN</a></span>
-            <span><a href="https://www.layui.com" target="_blank">Layui</a></span>
-            <span><a href="https://www.layui.com/admin/pro" target="_blank">LayuiAdmin</a></span>
+            <span><a href="https://github.com/Xzzz918/GeminiClothesStore" target="_blank">GitHub</a></span>
+            <span><a href="https://www.zhihu.com/people/shi-xing-62-50" target="_blank"></a>知乎</span>
+            <span><a href="https://www.gemini.fit" target="_blank">Gemini</a></span>
+            <span><a href="https://space.bilibili.com/119198836" target="_blank">Bilibili</a></span>
         </p>
     </div>
 </div>
 
 <!--layui框架的基础核心库-->
 <script src="${pageContext.request.contextPath}/layui/layui.js"></script>
-<!--lease项目自定义的登录js文件-->
+<!--项目自定义的登录js文件-->
 <script src="${pageContext.request.contextPath}/gemini/js/login.js" charset="UTF-8"></script>
 
 </body>

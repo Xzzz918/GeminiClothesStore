@@ -15,4 +15,8 @@ public class Admin {
     private int id;
     private String username;
     private String password;
+
+    public Admin(String telephone, String password) {
+        this(-1, telephone, password);
+    }
 }

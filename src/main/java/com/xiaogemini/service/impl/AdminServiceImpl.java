@@ -22,4 +22,14 @@ public class AdminServiceImpl implements AdminService {
     public List<Admin> queryAll() {
         return adminMapper.queryAll();
     }
+
+    @Override
+    public Admin selectAdmin(Admin admin) {
+        return adminMapper.selectAdmin(admin);
+    }
+
+    @Override
+    public void updatePwd(String password) {
+        adminMapper.updatePwd(password);
+    }
 }

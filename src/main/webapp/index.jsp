@@ -5,6 +5,6 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-<jsp:forward page="${pageContext.request.contextPath}/admin/toLogin"/>
+<jsp:forward page="${pageContext.request.contextPath}/login/toLogin"/>
 </body>
 </html>

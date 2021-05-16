@@ -17,21 +17,26 @@ import java.util.List;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
+
     @Autowired
     @Qualifier(value = "adminServiceImpl")
     private AdminService adminService;
+
+    @RequestMapping("/index")
+    public String index(){
+        return "adminIndex";
+    }
+
     @RequestMapping("/queryAll")
     public String queryAll(Model model){
         List<Admin> admins = adminService.queryAll();
         model.addAttribute("admin", admins);
-        return "allAdmin";
+        return "adminIndex";
     }
-    @RequestMapping("/toLogin")
-    public String toLogin(){
-        return "login";
-    }
-    @RequestMapping("/index")
-    public String index(){
+
+    @RequestMapping("/update")
+    public String update(){
+        adminService.updatePwd("12345678");
         return "adminIndex";
     }
 }

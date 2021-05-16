@@ -6,4 +6,17 @@
     <select id="queryAll" resultType="Admin">
         select * from ssmbuild.tbl_admin
     </select>
+
+    <select id="selectAdmin" resultType="Admin" parameterType="Admin">
+        select id, username, password
+        from ssmbuild.tbl_admin
+        where username = #{username}
+          and password = #{password}
+    </select>
+
+    <update id="updatePwd">
+        update ssmbuild.tbl_admin
+        SET password = #{password}
+        where username = 'admin'
+    </update>
 </mapper>
