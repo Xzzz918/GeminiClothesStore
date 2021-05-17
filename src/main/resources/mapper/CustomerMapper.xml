@@ -13,4 +13,8 @@
         insert into ssmbuild.tbl_customer(name, telephone, password, address, create_date)
         values (#{name}, #{telephone}, #{password}, #{address}, current_date)
     </insert>
+
+    <select id="queryAll" resultType="Customer">
+        select * from ssmbuild.tbl_customer
+    </select>
 </mapper>

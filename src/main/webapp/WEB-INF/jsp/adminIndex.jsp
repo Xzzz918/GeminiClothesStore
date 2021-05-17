@@ -20,7 +20,7 @@
     <div class="layui-layout layui-layout-admin">
         <jsp:include page="admin/header.jsp" flush="true"/>
         <jsp:include page="admin/left.jsp" flush="true"/>
-        <div class="layui-body" style="background-image: url(${pageContext.request.contextPath}/gemini/images/bg.jpg)">
+        <div class="layui-body" style="background-image: url(${pageContext.request.contextPath}/gemini/images/bg4.jpg)">
             <div style="text-align: center; margin-top: 270px; font-size: 50px;">WELCOME, ADMIN.</div>
         </div>
         <div class="layui-footer">© 2021 GEMINI</div>

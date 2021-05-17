@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.sql.Date;
-
 /**
  * @author gemini
  * Created in  2021/5/16 10:13
@@ -25,12 +23,13 @@ public class CustomerController {
     }
 
     @RequestMapping("/add")
-    public void add(){
+    public String add(){
         Customer customer = new Customer();
-        customer.setName("Gemini");
-        customer.setTelephone("13021202155");
-        customer.setAddress("海淀区");
+        customer.setName("Killer");
+        customer.setTelephone("13021202156");
+        customer.setAddress("朝阳区");
         customer.setPassword("123456");
         customerService.addCustomer(customer);
+        return "login";
     }
 }

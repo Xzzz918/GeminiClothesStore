@@ -6,6 +6,8 @@ import com.xiaogemini.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author gemini
  * Created in  2021/5/16 10:06
@@ -24,5 +26,10 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void addCustomer(Customer customer) {
         customerMapper.addCustomer(customer);
+    }
+
+    @Override
+    public List<Customer> queryAll() {
+        return customerMapper.queryAll();
     }
 }

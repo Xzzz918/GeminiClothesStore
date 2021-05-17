@@ -17,8 +17,8 @@
         <ul class="layui-nav layui-nav-tree" lay-filter="test">
             <li class="layui-nav-item lease-li"><a href="${pageContext.request.contextPath}/admin/index">我的订单</a></li>
             <li class="layui-nav-item lease-li"><a href="${pageContext.request.contextPath}/admin/index">我的服装</a></li>
-            <li class="layui-nav-item lease-li"><a href="${pageContext.request.contextPath}/admin/index">我的顾客</a></li>
-            <li class="layui-nav-item lease-li"><a href="${pageContext.request.contextPath}/admin/index">我的账户</a></li>
+            <li class="layui-nav-item lease-li"><a href="${pageContext.request.contextPath}/admin/myCustomer">我的顾客</a></li>
+            <li class="layui-nav-item lease-li"><a href="${pageContext.request.contextPath}/admin/toUpdatePwd">修改密码</a></li>
         </ul>
     </div>
 </div>

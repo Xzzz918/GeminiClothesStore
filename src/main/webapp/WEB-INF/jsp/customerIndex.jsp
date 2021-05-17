@@ -20,9 +20,8 @@
 <div class="layui-layout layui-layout-admin">
     <jsp:include page="customer/header.jsp" flush="true"/>
     <jsp:include page="customer/left.jsp" flush="true"/>
-    <div class="layui-body" style="background-image: url(${pageContext.request.contextPath}/gemini/images/bg2.jpg)">
-        <div style="text-align: center; margin-top: 270px; font-size: 50px; color: lightcoral">
-            Welcome, My Lord.</div>
+    <div class="layui-body" style="background-image: url(${pageContext.request.contextPath}/gemini/images/bg4.jpg)">
+        <div style="text-align: center; margin-top: 270px; font-size: 50px;">WELCOME, My Lord.</div>
     </div>
     <div class="layui-footer">© 2021 GEMINI</div>
 </div>
