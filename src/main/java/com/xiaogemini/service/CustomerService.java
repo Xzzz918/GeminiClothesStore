@@ -1,7 +1,6 @@
 package com.xiaogemini.service;
 
 import com.xiaogemini.pojo.Customer;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -13,4 +12,6 @@ public interface CustomerService {
     Customer selectCustomer(Customer customer);
     void addCustomer(Customer customer);
     List<Customer> queryAll();
+    void update(String telephone);
+    Customer selectByTel(String telephone);
 }

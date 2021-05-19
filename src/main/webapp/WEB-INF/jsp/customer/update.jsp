@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: 88414
-  Date: 2021/5/16
-  Time: 10:16
+  Date: 2021/5/17
+  Time: 20:24
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
@@ -18,11 +18,19 @@
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
-    <jsp:include page="customer/header.jsp" flush="true"/>
-    <jsp:include page="customer/left.jsp" flush="true"/>
+    <jsp:include page="header.jsp" flush="true"/>
+    <jsp:include page="left.jsp" flush="true"/>
     <div class="layui-body" style="background-image: url(${pageContext.request.contextPath}/gemini/images/bg4.jpg)">
-        <div style="text-align: center; margin-top: 270px; font-size: 50px;">WELCOME, My Lord ${customer.name}.</div>
-        <div style="text-align: right; margin-top: 400px;margin-bottom: 20px; font-size: 30px;">登录于${customer.address}</div>
+        <form action="${pageContext.request.contextPath}/customer/updateCustomer" class="layui-form" method="post">
+            <div class="layui-form-item">
+                <label class="layui-form-label">我的姓名：</label>
+                <div class="layui-input-block">
+                    <label>
+                        <input type="text" name="title" required  lay-verify="required" placeholder="请输入姓名" autocomplete="off" class="layui-input">
+                    </label>
+                </div>
+            </div>
+        </form>
     </div>
     <div class="layui-footer">© 2021 GEMINI</div>
 </div>

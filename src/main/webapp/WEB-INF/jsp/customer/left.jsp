@@ -16,7 +16,8 @@
     <div class="layui-side-scroll">
         <ul class="layui-nav layui-nav-tree" lay-filter="test">
             <li class="layui-nav-item lease-li"><a href="${pageContext.request.contextPath}/customer/index">我的订单</a></li>
-            <li class="layui-nav-item lease-li"><a href="${pageContext.request.contextPath}/customer/index">我的账户</a></li>
+            <li class="layui-nav-item lease-li"><a href="${pageContext.request.contextPath}/customer/info">我的账户</a></li>
+            <li class="layui-nav-item lease-li"><a href="${pageContext.request.contextPath}/customer/update">修改信息</a></li>
         </ul>
     </div>
 </div>

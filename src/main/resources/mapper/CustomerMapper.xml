@@ -17,4 +17,14 @@
     <select id="queryAll" resultType="Customer">
         select * from ssmbuild.tbl_customer
     </select>
+
+    <select id="selectByTel" resultType="Customer">
+        select * from ssmbuild.tbl_customer where telephone = #{telephone}
+    </select>
+
+    <update id="update">
+        update ssmbuild.tbl_customer
+        set name = #{name},password = #{password},address = #{address}
+        where telephone = #{telephone}
+    </update>
 </mapper>

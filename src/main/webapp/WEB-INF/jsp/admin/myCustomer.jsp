@@ -29,6 +29,7 @@
         <table class="layui-table" lay-skin="nob" lay-even>
             <thead>
             <tr>
+                <th>客户ID</th>
                 <th>客户姓名</th>
                 <th>客户电话</th>
                 <th>客户密码</th>
@@ -40,6 +41,7 @@
             <tbody>
             <c:forEach var="customer" items="${requestScope.get('customers')}">
                 <tr>
+                    <td>${customer.id}</td>
                     <td>${customer.name}</td>
                     <td>${customer.telephone}</td>
                     <td>${customer.password}</td>

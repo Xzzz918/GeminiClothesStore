@@ -12,4 +12,6 @@ public interface CustomerMapper {
     Customer selectCustomer(Customer customer);
     void addCustomer(Customer customer);
     List<Customer> queryAll();
+    void update(String telephone);
+    Customer selectByTel(String telephone);
 }
