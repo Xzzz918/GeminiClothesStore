@@ -39,16 +39,20 @@ public class CustomerController {
         return "login";
     }
     @RequestMapping("/update")
-    public String update(){
+    public String update(Model model, HttpSession httpSession){
+        String telephone = httpSession.getAttribute("user").toString();
+        Customer customer = customerService.selectByTel(telephone);
+        model.addAttribute("customer", customer);
         return "customer/update";
     }
+
     @RequestMapping("/updateCustomer")
-    public void updateCustomer(Model model, HttpSession httpSession){
-        String telephone = httpSession.getAttribute("user").toString();
-        customerService.update(telephone);
+    public String updateCustomer(Customer customer){
+        customerService.update(customer);
+        return "redirect:/customer/CustomerInfo";
     }
 
-    @RequestMapping("/info")
+    @RequestMapping("/CustomerInfo")
     public String info(Model model, HttpSession httpSession){
         String telephone = httpSession.getAttribute("user").toString();
         Customer customer = customerService.selectByTel(telephone);

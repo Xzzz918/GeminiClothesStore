@@ -15,23 +15,33 @@
     <link rel="short icon" href="${pageContext.request.contextPath}/gemini/images/gemini.ico">
     <!--layui框架的核心样式文件-->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/layui/css/layui.css">
+    <style>
+        #table {
+            width: 500px;
+            height: 40px;
+            margin: 100px auto;
+            text-align: center;
+            line-height: 38px;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <jsp:include page="header.jsp" flush="true"/>
     <jsp:include page="left.jsp" flush="true"/>
-    <div class="layui-body">
+    <div class="layui-body" style="background-image: url(${pageContext.request.contextPath}/gemini/images/bg.jpg)">
         <div class="margin10" style="text-align: center; margin-top: 30px;">
             <h1 style="font-size: 30px;text-align: center"><i class="layui-icon layui-icon-username" style="font-size: 30px"></i> 个人信息</h1>
         </div>
-        <table class="layui-table" lay-skin="nob" lay-even>
-            <tbody style="width: 50px;text-align: center">
+        <table class="layui-table" id="table" lay-even lay-skin="nob" style="text-align: center">
+            <tbody>
             <tr>
                 <td>我的ID</td>
                 <td>${customer.id}</td>
             </tr>
             <tr>
-                <td>我的姓名</td>
+                <td>我的昵称</td>
                 <td>${customer.name}</td>
             </tr>
             <tr>

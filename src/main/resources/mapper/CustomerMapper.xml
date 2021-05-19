@@ -22,7 +22,7 @@
         select * from ssmbuild.tbl_customer where telephone = #{telephone}
     </select>
 
-    <update id="update">
+    <update id="update" parameterType="Customer">
         update ssmbuild.tbl_customer
         set name = #{name},password = #{password},address = #{address}
         where telephone = #{telephone}

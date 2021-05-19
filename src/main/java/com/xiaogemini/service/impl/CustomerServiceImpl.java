@@ -32,10 +32,9 @@ public class CustomerServiceImpl implements CustomerService {
     public List<Customer> queryAll() {
         return customerMapper.queryAll();
     }
-
     @Override
-    public void update(String telephone) {
-        customerMapper.update(telephone);
+    public void update(Customer customer) {
+        customerMapper.update(customer);
     }
 
     @Override

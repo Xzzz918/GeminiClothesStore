@@ -3,6 +3,7 @@ package com.xiaogemini.pojo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.sql.Date;
 
@@ -19,6 +20,7 @@ public class Customer {
     private String telephone;
     private String password;
     private String address;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date create_date;
 
     public Customer(String telephone, String password) {

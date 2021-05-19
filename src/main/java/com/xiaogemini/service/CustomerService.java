@@ -12,6 +12,6 @@ public interface CustomerService {
     Customer selectCustomer(Customer customer);
     void addCustomer(Customer customer);
     List<Customer> queryAll();
-    void update(String telephone);
+    void update(Customer customer);
     Customer selectByTel(String telephone);
 }
