@@ -41,4 +41,14 @@ public class CustomerServiceImpl implements CustomerService {
     public Customer selectByTel(String telephone) {
         return customerMapper.selectByTel(telephone);
     }
+
+    @Override
+    public void deleteByTel(String telephone) {
+        customerMapper.deleteByTel(telephone);
+    }
+
+    @Override
+    public List<Customer> queryByTel(String telephone) {
+        return customerMapper.queryByTel(telephone);
+    }
 }

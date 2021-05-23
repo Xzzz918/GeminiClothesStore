@@ -7,6 +7,7 @@ import com.xiaogemini.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -63,5 +64,36 @@ public class AdminController {
         model.addAttribute("customers", customers);
         return "admin/myCustomer";
     }
-
+    //管理员删除某一指定telephone的客户
+    @RequestMapping("/delete/{telephone}")
+    public String deleteCustomer(@PathVariable("telephone") String telephone){
+        customerService.deleteByTel(telephone);
+        return "redirect:/admin/myCustomer";
+    }
+    //管理员添加用户
+    @RequestMapping("/toAdd")
+    public String toAddCustomer(Model model){
+        Customer customer = new Customer();
+        model.addAttribute("customer", customer);
+        return "admin/addCustomer";
+    }
+    @RequestMapping("/add")
+    public String addCustomer(Customer customer){
+        customerService.addCustomer(customer);
+        return "redirect:/admin/myCustomer";
+    }
+    //管理员查询用户
+    @RequestMapping("/query")
+    public String queryCustomer(Model model, String telephone){
+        List<Customer> customers = customerService.queryByTel(telephone);
+//        if (customers != null){
+        if (!customers.isEmpty()){
+            model.addAttribute("customers", customers);
+        }
+        else {
+            List<Customer> customers1 = customerService.queryAll();
+            model.addAttribute("customers", customers1);
+        }
+        return "admin/myCustomer";
+    }
 }

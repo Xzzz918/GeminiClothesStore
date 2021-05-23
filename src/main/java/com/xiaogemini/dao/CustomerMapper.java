@@ -14,4 +14,6 @@ public interface CustomerMapper {
     List<Customer> queryAll();
     void update(Customer customer);
     Customer selectByTel(String telephone);
+    void deleteByTel(String telephone);
+    List<Customer> queryByTel(String telephone);
 }

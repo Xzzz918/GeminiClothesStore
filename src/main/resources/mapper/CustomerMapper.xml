@@ -21,10 +21,16 @@
     <select id="selectByTel" resultType="Customer">
         select * from ssmbuild.tbl_customer where telephone = #{telephone}
     </select>
+    <select id="queryByTel" resultType="Customer">
+        select * from ssmbuild.tbl_customer where telephone like concat('%', #{telephone}, '%')
+    </select>
 
     <update id="update" parameterType="Customer">
         update ssmbuild.tbl_customer
         set name = #{name},password = #{password},address = #{address}
         where telephone = #{telephone}
     </update>
+    <delete id="deleteByTel">
+        delete from ssmbuild.tbl_customer where telephone = #{telephone}
+    </delete>
 </mapper>

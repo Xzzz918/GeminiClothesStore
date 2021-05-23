@@ -28,16 +28,6 @@ public class CustomerController {
         return "customerIndex";
     }
 
-    @RequestMapping("/add")
-    public String add(){
-        Customer customer = new Customer();
-        customer.setName("Killer");
-        customer.setTelephone("13021202156");
-        customer.setAddress("朝阳区");
-        customer.setPassword("123456");
-        customerService.addCustomer(customer);
-        return "login";
-    }
     @RequestMapping("/update")
     public String update(Model model, HttpSession httpSession){
         String telephone = httpSession.getAttribute("user").toString();
