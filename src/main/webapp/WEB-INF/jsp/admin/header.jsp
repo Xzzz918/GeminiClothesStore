@@ -15,7 +15,7 @@
   <ul class="layui-nav layui-layout-right">
     <li class="layui-nav-item">
       <!--头像-->
-      <img src="${pageContext.request.contextPath}/gemini/images/gemini.jpg" class="layui-nav-img" alt="admin-head">
+      <img src="${pageContext.request.contextPath}/statics/images/gemini.jpg" class="layui-nav-img" alt="admin-head">
       <%=(String) session.getAttribute("user")%>
     </li>
     <!--退出系统-->

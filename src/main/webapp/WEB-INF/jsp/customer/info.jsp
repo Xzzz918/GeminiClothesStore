@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>GEMINI:Clothes Store</title>
     <!--页面图标-->
-    <link rel="short icon" href="${pageContext.request.contextPath}/gemini/images/gemini.ico">
+    <link rel="short icon" href="${pageContext.request.contextPath}/statics/images/gemini.ico">
     <!--layui框架的核心样式文件-->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/layui/css/layui.css">
     <style>
@@ -30,7 +30,7 @@
 <div class="layui-layout layui-layout-admin">
     <jsp:include page="header.jsp" flush="true"/>
     <jsp:include page="left.jsp" flush="true"/>
-    <div class="layui-body" style="background-image: url(${pageContext.request.contextPath}/gemini/images/bg.jpg)">
+    <div class="layui-body" style="background-image: url(${pageContext.request.contextPath}/statics/images/bg.jpg)">
         <div class="margin10" style="text-align: center; margin-top: 30px;">
             <h1 style="font-size: 30px;text-align: center"><i class="layui-icon layui-icon-username" style="font-size: 30px"></i> 个人信息</h1>
         </div>
